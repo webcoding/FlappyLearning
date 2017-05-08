@@ -512,10 +512,10 @@ var Neuroevolution = function (options) {
    * @return False if no Generations to add to.
    */
   Generations.prototype.addGenome = function(genome){
-        // Can't add to a Generation if there are no Generations.
+    // Can't add to a Generation if there are no Generations.
     if(this.generations.length == 0) return false;
 
-        // FIXME addGenome returns void.
+    // FIXME addGenome returns void.
     return this.generations[this.generations.length - 1].addGenome(genome);
   }
 
@@ -541,14 +541,14 @@ var Neuroevolution = function (options) {
     var networks = [];
 
     if(self.generations.generations.length == 0){
-            // If no Generations, create first.
+      // If no Generations, create first.
       networks = self.generations.firstGeneration();
     }else{
-            // Otherwise, create next one.
+      // Otherwise, create next one.
       networks = self.generations.nextGeneration();
     }
 
-        // Create Networks from the current Generation.
+    // Create Networks from the current Generation.
     var nns = [];
     for(var i in networks){
       var nn = new Network();
@@ -557,7 +557,7 @@ var Neuroevolution = function (options) {
     }
 
     if(self.options.lowHistoric){
-            // Remove old Networks.
+      // Remove old Networks.
       if(self.generations.generations.length >= 2){
         var genomes =
           self.generations
@@ -570,10 +570,10 @@ var Neuroevolution = function (options) {
     }
 
     if(self.options.historic != -1){
-            // Remove older generations.
+      // Remove older generations.
       if(self.generations.generations.length > self.options.historic + 1){
-              self.generations.generations.splice(0,
-                  self.generations.generations.length - (self.options.historic + 1));
+        self.generations.generations.splice(0,
+              self.generations.generations.length - (self.options.historic + 1));
       }
     }
 
