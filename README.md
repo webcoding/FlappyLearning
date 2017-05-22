@@ -37,6 +37,8 @@ You can see the NeuroEvolution integration in Flappy Bird in [Game.js](http://gi
 
 ## How it works
 
+[issues#17](https://github.com/xviniette/FlappyLearning/issues/17)
+
 As far as I learned from code it takes 2 inputs:
 
 normalized vertical position of the bird (Y coordinate divided by canvas height)
