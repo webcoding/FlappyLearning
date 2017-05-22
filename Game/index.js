@@ -28,14 +28,14 @@ export default class Game {
     this.score = 0
     this.canvas = options.$domCanvas
     this.ctx = this.canvas.getContext('2d')
-    this.width = this.canvas.width
-    this.height = this.canvas.height
-    this.spawnInterval = 90
+    this.width = this.canvas.width    // 500
+    this.height = this.canvas.height  // 512
+    this.spawnInterval = 90     // 生成管道数间隔
     this.interval = 0
     this.gen = []
     this.alives = 0
     this.generation = 0         // 世代
-    this.backgroundSpeed = 0.5
+    this.backgroundSpeed = 0.5  // 背景移动速度（定值）
     this.backgroundx = 0
     this.maxScore = 0
   }
@@ -61,6 +61,7 @@ export default class Game {
     if (this.birds.length > 0) {
       for (let i = 0; i < this.pipes.length; i += 2) {
         if (this.pipes[i].x + this.pipes[i].width > this.birds[0].x) {
+          // 过关
           nextHoll = this.pipes[i].height / this.height
           break
         }
@@ -92,7 +93,7 @@ export default class Game {
       }
     }
 
-    for (var i = 0; i < this.pipes.length; i++) {
+    for (let i = 0; i < this.pipes.length; i++) {
       this.pipes[i].update()
       if (this.pipes[i].isOut()) {
         this.pipes.splice(i, 1)
@@ -101,9 +102,11 @@ export default class Game {
     }
 
     if (this.interval === 0) {
-      var deltaBord = 50
-      var pipeHoll = 120
+      var deltaBord = 50  // 管道固定口（上下管道与边界链接处）
+      var pipeHoll = 120  // 管道缺口高度（小鸟通道）
+      // 随机生成管道缺口位置(四舍五入)左下角为基准
       var hollPosition = Math.round(Math.random() * (this.height - deltaBord * 2 - pipeHoll)) + deltaBord
+      // 上下管道
       this.pipes.push(new Pipe({ x: this.width, y: 0, height: hollPosition }))
       this.pipes.push(new Pipe({ x: this.width, y: hollPosition + pipeHoll, height: this.height }))
     }

@@ -24,7 +24,7 @@ export default class Bird {
     }
   }
 
-  // 振翅飞一下
+  // 飞一下
   flap() {
     this.gravity = this.jump
   }
@@ -35,12 +35,12 @@ export default class Bird {
   }
 
   isDead(height, pipes) {
-    // 小鸟以左上角为 (x, y) 坐标
-    // 超出上边界 超出下边界
+    // 小鸟以左上角 (x, y) 为坐标
+    // 超出上 下边界死
     if (this.y >= height || this.y + this.height <= 0) {
       return true
     }
-    // 相对于管道位置，除以下情况全为死
+    // 相对于管道位置，除以下情况全死
     for (var i in pipes) {
       if (!(
         this.x > pipes[i].x + pipes[i].width ||     // 在管道右侧

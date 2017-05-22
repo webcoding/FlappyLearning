@@ -20,6 +20,7 @@ export default class Pipe {
   }
 
   update() {
+    // 管道不断左移，鸟x值原地不动
     this.x -= this.speed
   }
 
