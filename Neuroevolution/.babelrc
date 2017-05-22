@@ -1,0 +1,39 @@
+{
+  "presets": [
+    ["env", {
+      "targets": {
+        "browsers": ["last 5 versions", "safari >= 7"]
+      }
+    }],
+    // "flow-vue",
+    "latest",
+    "es2015",
+    "stage-0"
+  ],
+  // "plugins": [
+  //   ["module-resolver", {
+  //     "root": ["./src"],
+  //     "alias": {
+  //       "@common": "./src",
+  //       "@components": "./src/components",
+  //       "@api": "./src/services"
+  //     },
+  //     "extensions": [".js", ".jsx", ".es", ".es6"]
+  //   }],
+  //   // "syntax-dynamic-import",
+  //   // "transform-object-assign",
+  //   // "transform-object-rest-spread",
+  //   // "transform-vue-jsx",
+  //   "transform-runtime"
+  // ],
+  // "env": {
+  //   "test": {
+  //     // "plugins": [ "istanbul" ]
+  //   }
+  // },
+  "comments": false,
+  "ignore": [
+    // "packages/**/*.js",
+    "dist/*.js"
+  ]
+}

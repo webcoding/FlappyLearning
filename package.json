@@ -1,0 +1,23 @@
+{
+  "name": "neural-evolution",
+  "version": "1.0.0",
+  "description": "A neural evolution project",
+  "author": "jack <1395093509@qq.com>",
+  "private": true,
+  "scripts": {
+    "dev": "node build/dev-server.js",
+    "test": "eslint"
+  },
+  "dependencies": {},
+  "devDependencies": {
+  },
+  "engines": {
+    "node": ">= 7.0.0",
+    "npm": ">= 4.0.0"
+  },
+  "browserlist": [
+    "> 1%",
+    "last 5 versions",
+    "not ie <= 8"
+  ]
+}
